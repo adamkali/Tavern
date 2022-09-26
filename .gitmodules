@@ -1,0 +1,9 @@
+[submodule "TavernProfile/Tavern-Backend"]
+	path = TavernProfile/Tavern-Backend
+	url = https://github.com/adamkali/Tavern-Backend.git
+[submodule "TavernMobile/tavern-app"]
+	path = TavernMobile/tavern-app
+	url = https://github.com/adamkali/tavern-app.git
+[submodule "TavernDatabase/TavernDB"]
+	path = TavernDatabase/TavernDB
+	url = https://github.com/adamkali/TavernDB.git

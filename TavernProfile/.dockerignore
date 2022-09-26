@@ -1,0 +1,10 @@
+# do not enclude env directory
+# do not include .git directory
+*.exe
+**/env
+**/.git
+PlannedChanges.md
+README.md
+Roadmap.md
+
+
