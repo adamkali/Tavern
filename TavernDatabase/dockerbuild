@@ -1,0 +1,4 @@
+
+# Create tavern-database image! pwd us the name of the password. 
+# DO NOT LEAVE PRODUCTION PASSWORDS IN THE DOCKERFILE OR THIS FILE!
+docker build --build-arg PASS=pwd -t tavern-database .

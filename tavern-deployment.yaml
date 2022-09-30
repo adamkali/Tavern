@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tavern
+spec:
+  # make a database for tavern
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tavern
+  template:
+    metadata:
+      labels:
+        app: tavern
+    spec:
+      replicas: 2
+      containers:
+      - name: tavern
+        image: tavern-profile
+        resources:
+          requests:
+            cpu: 100m
+            memory: 300Mi
+          limits:
+            cpu: 200m
+            memory: 400Mi
+        ports:
+        - containerPort: 10000
+    # make a database for tavern called tavern-database using image tavern-database
