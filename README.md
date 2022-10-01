@@ -7,11 +7,14 @@ This is my side project which has somwhat become an obsession of mine. It morphe
 ## Getting started.
 
 Pull the repository:
-  git pull https://gihub.com/adamkali/Tavern.git
+ ```
+git clone --recursive https://github.com/adamkai/Tavern.git
+ ```
   
-Next ensure that all the needed dockerfiles work right out of the box...
-  cd ./Tavern/TavernProfile && docker build .
-  cd ../TavernDatabase/TavernDB && docker build .
+Next either inject your databse with `dump.sh` to appropriately populate the database, or use ...
+```
+docker compose docker-compose.yaml
+```
   
 A good way to start is to make sure that you can get information. So run POST requests on postman or thunderclient oor what have you
 ```
@@ -32,7 +35,42 @@ BODY: {
 }
 ```
 
-Once everything is working make a branch, edit, and make a pull request! If it works and does not break anything the pull request will be merged to the main release branch.
+Once everything is working make a branch, edit, and make a pull request! If it works and does not break anything the pull request will be merged to the main release branch. Also please read the README.md s to see design patterns and any issues already opened. You are free to make a pull request as needed. If you are not a part of the Tavern Team you will have to create 
+```
+cd Tavern/TavernProfile/Tavern-Backend/TavernProfile-env
+nano .local.yaml
+nano .prod.yaml
+```
+and provide these env vars:
+```
+database:
+  host: localhost
+  port: 3306
+  username: root
+  password: MYSQL_ROOT_ENV
+  database: taverndatabase
+server:
+  port: 8000
+  host: localhost
+cors:
+  origins:
+    - "*"
+  methods:
+    - GET
+    - POST
+    - PUT
+    - DELETE
+    - OPTIONS
+  headers:
+    - "*"
+  credentials: true
+email:
+  host: smtp.gmail.com
+  port: 587
+  username: A_GMAIL_ACCOUNT_WITH_APP_PRIVELAGES
+  password: GMAIL_APP_PASSWORD
+```
+For both of the env files.
 
 Thank you for contributing!
 ![Splash logo](https://user-images.githubusercontent.com/43151285/192321881-19b0f49a-c178-4531-96a0-37a2745a33c9.png)
