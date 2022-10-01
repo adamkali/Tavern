@@ -1,0 +1,19 @@
+# use latest version
+version: '3.7'
+
+services:
+  db:
+    container_name: tavern-database
+    platform: linux/x86_64
+    build: 
+      context: .
+      dockerfile: db.Dockerfile
+    networks:
+      - defaut
+    restart: always
+    ports:
+      - 10100:3306
+  api:
+    container_name: tavern_profile
+    build:
+      context: .
