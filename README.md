@@ -8,7 +8,7 @@ This is my side project which has somwhat become an obsession of mine. It morphe
 
 Pull the repository:
  ```
-git clone --recursive https://github.com/adamkai/Tavern.git
+git clone --recursive https://github.com/adamkali/Tavern.git
  ```
   
 Next either inject your databse with `dump.sh` to appropriately populate the database, or use ...
