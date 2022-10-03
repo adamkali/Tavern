@@ -1,0 +1,34 @@
+  # use latest version
+version: '3.7'
+
+services:
+  tavern-database:
+    image: adamkali/tavern-database:beor.0.2  
+    container_name: tavern-database
+    ports:
+      - 10100:3306
+    environment: 
+      - pwd=${MYSQL_ROOT_PASSWORD}
+    volumes:
+      - db:/var/lib/mysql
+    networks:
+      - tavern-network
+
+  tavern-profile:
+    build:
+      context: ./TavernProfile/Tavern-Backend
+      dockerfile: Dockerfile
+    container_name: tavern-profile
+    ports:
+      - 10000:8000
+    depends_on:
+      - tavern-database
+    networks:
+      - tavern-network
+
+volumes:
+  db:
+
+networks:
+  tavern-network:
+  
