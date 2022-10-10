@@ -7,3 +7,6 @@
 [submodule "TavernDatabase/TavernDB"]
 	path = TavernDatabase/TavernDB
 	url = https://github.com/adamkali/TavernDB.git
+[submodule "TavernLambda"]
+	path = TavernLambda
+	url = https://github.com/adamkali/TavernLambda.git

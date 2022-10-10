@@ -1,0 +1,18 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "tavern-profile-database.cluster-cp2exlhgp64r.us-east-1.rds.amazonaws.com",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "Tavern",
+            "database": "taverndatabase",
+            "username": "tpd_admin",
+            "password": "STPete-Tavern2022?",
+            "connectionTimeout": 500
+        }
+    ]
+}
