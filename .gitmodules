@@ -10,3 +10,6 @@
 [submodule "TavernLambda"]
 	path = TavernLambda
 	url = https://github.com/adamkali/TavernLambda.git
+[submodule "TavernWeb/TavernWeb"]
+	path = TavernWeb/TavernWeb
+	url = https://github.com/adamkali/TavernWeb.git
