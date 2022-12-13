@@ -6,29 +6,39 @@ services:
     image: adamkali/tavern-database:beor.0.2  
     container_name: tavern-database
     ports:
-      - 10100:3306
-    environment: 
-      - pwd=${MYSQL_ROOT_PASSWORD}
+      - 10200:3306
     volumes:
-      - db:/var/lib/mysql
+      - ./dbdata:/var/lib/database
     networks:
-      - tavern-network
-
+      - "tavern.network"
   tavern-profile:
     build:
       context: ./TavernProfile/Tavern-Backend
       dockerfile: Dockerfile
     container_name: tavern-profile
     ports:
-      - 10000:8000
+      - 10100:10000
     depends_on:
       - tavern-database
+    deploy:
+      replicas: 3
     networks:
-      - tavern-network
+      - "tavern.network"
+  load-balancer:
+    image: nginx:latest
+    ports:
+      - 10100:80
+    depends_on:
+      - tavern-profile
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    networks:
+      - "tavern.network"
 
 volumes:
-  db:
+  tavern-database:
+  load-balancer:
 
 networks:
-  tavern-network:
-  
+  tavern.network:
+
