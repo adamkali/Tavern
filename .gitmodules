@@ -10,3 +10,6 @@
 [submodule "TavernWeb"]
 	path = TavernWeb
 	url = https://github.com/adamkali/TavernWeb.git
+[submodule "TavernCommon"]
+	path = TavernCommon
+	url = ./TavernCommon
