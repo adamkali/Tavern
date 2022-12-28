@@ -1,0 +1,3 @@
+[submodule "TavernWeb"]
+	path = TavernWeb
+	url = https://github.com/adamkali/TavernWeb.git
